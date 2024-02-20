@@ -1,0 +1,33 @@
+@mixin buttonStyleDownload {
+  border: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 15px;
+  color: $color_white;
+  background-color: $color_green;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #5db9d0;
+  }
+
+  span {
+    color: $color_blue;
+  }
+}
+
+@mixin buttonStyleInfo {
+  border: none;
+  padding: 14px 23px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 15px;
+  color: $color_white;
+  background-color: $color_purple;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color_soft_purple;
+  }
+}
