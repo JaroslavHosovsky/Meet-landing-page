@@ -48,7 +48,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
 
     button[type="submit"] {
       @include buttonStyleDownload;
@@ -58,27 +58,27 @@ main {
       @include buttonStyleInfo;
       margin-bottom: 25px;
     }
+  }
+  .divider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 45px;
+  }
 
-    .divider {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+  .line {
+    width: 1px;
+    height: 67px;
+    background-color: $color_light_grey;
+  }
 
-    .line {
-      width: 1px;
-      height: 67px;
-      background-color: $color_light_grey;
-    }
-
-    .line + span {
-      border: 1px solid $color_light_grey;
-      padding: 10px 12px;
-      border-radius: 50%;
-      color: $color_grey;
-      font-weight: bold;
-    }
+  .line + span {
+    border: 1px solid $color_light_grey;
+    padding: 10px 12px;
+    border-radius: 50%;
+    color: $color_grey;
+    font-weight: bold;
   }
 }
 
@@ -184,11 +184,13 @@ footer {
     color: $color_white;
     font-size: 27px;
     margin-bottom: 15px;
+    max-width: 483px;
   }
 
   p {
     color: $color_white;
     margin-bottom: 25px;
+    max-width: 483px;
   }
 
   button[type="submit"] {
@@ -201,6 +203,189 @@ footer {
 
     span {
       color: #fafafa68;
+    }
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  header {
+    height: 325px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  header {
+    height: 350px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  header {
+    height: 400px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      max-width: 447px;
+    }
+
+    .button-container {
+      flex-direction: row;
+      align-items: flex-start;
+
+      .divider {
+        align-self: center;
+      }
+    }
+  }
+
+  .info-section {
+    .photo-gallery-container {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      gap: 10px;
+
+      #image1 {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+      }
+
+      #image2 {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+      }
+
+      #image3 {
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1;
+      }
+
+      #image4 {
+        grid-column: 4 / span 1;
+        grid-row: 1 / span 1;
+      }
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        max-width: 365px;
+      }
+
+      h2 + p {
+        max-width: 579px;
+      }
+    }
+
+    .divider {
+      bottom: -20px;
+    }
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 80px 0;
+    background-image: linear-gradient(#4d97a9e1, #4d97a9e1),
+      url("images/tablet/image-footer.jpg");
+  }
+}
+
+@media only screen and (min-width: 715px) {
+  header {
+    height: 450px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  header {
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    position: relative;
+  }
+
+  header {
+    background-image: url("images/desktop/image-hero-left.png"),
+      url("images/desktop/image-hero-right.png");
+    background-repeat: no-repeat;
+    background-position: -1vw, calc(100vw - 277px);
+    background-size: 300px, 300px;
+    margin-bottom: 100px;
+  }
+
+  main {
+    position: absolute;
+    top: 145px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  header {
+    background-position: -2vw, calc(100vw - 380px);
+    background-size: 410px, 410px;
+    margin-top: 125px;
+    margin-bottom: 100px;
+  }
+
+  main {
+    p {
+      max-width: 478px;
+    }
+
+    .button-container {
+      margin-bottom: 45px;
+    }
+  }
+
+  .info-section {
+    .photo-gallery-container {
+      width: 85%;
+      margin: auto;
+      gap: 20px;
+    }
+    .text-container {
+      margin-top: 75px;
+
+      h2 + p {
+        max-width: 450px;
+      }
+
+      .divider span {
+        padding: 10px 11px;
+      }
+    }
+  }
+
+  footer {
+    flex-direction: row;
+    gap: 140px;
+    // padding: 100px 0 80px 0;
+    background-image: linear-gradient(#4d97a9e1, #4d97a9e1),
+      url("images/desktop/image-footer.jpg");
+    text-align: left;
+
+    h3 {
+      max-width: 260px;
+    }
+
+    p {
+      max-width: 300px;
     }
   }
 }
